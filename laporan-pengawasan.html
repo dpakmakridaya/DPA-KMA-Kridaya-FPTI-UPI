@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Pengawasan - DPA KMA-Kridaya FPTI UPI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container navbar-content">
+        <a href="index.html" class="logo">
+            <img src="img/dpa logo.png" alt="Logo DPA KMA-Kridaya"> 
+            <div class="logo-text">
+                <strong>DPA KMA-Kridaya</strong>
+                <span>FPTI UPI</span>
+            </div>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="laporan-pengawasan.html">Laporan Pengawasan</a></li>
+                <li><a href="peraturan-dokumen.html">Peraturan & Dokumen</a></li>
+                <li><a href="dokumen-lainnya.html">Dokumen Lainnya</a></li>
+                <li><a href="aspirasi.html">Aspirasi</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Daftar Laporan Pengawasan Program Kerja</h2>
+            <p>Akses seluruh laporan pengawasan program kerja Badan Pengurus KMA-Kridaya FPTI UPI yang dikeluarkan oleh DPA KMA-Kridaya secara transparan dan mudah.</p>
+        </div>
+    </div>
+
+    <main class="container main-content">
+        <div class="search-filter-area">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Cari dokumen berdasarkan judul...">
+            </div>
+        </div>
+
+        <p class="document-count">Menampilkan <span id="displayedDocsCount">4</span> dari <span id="totalDocsCount">4</span> dokumen</p>
+
+        <div class="table-responsive">
+            <table class="document-table">
+                <thead>
+                    <tr>
+                        <th>Judul Dokumen</th>
+                        <th>Tanggal</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="documentList">
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/spreadsheets/d/1WFNw0G8WVuV85PGZY5LQC-mfvlTdgNkS/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank">Laporan Pengawasan Apresiasi Wisuda 2025</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 16 Oktober 2025</td>
+                        <td><a href="https://docs.google.com/spreadsheets/d/1WFNw0G8WVuV85PGZY5LQC-mfvlTdgNkS/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/spreadsheets/d/1We75flMzxdboijouoBtQusP0S4nMWo4P/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank">Laporan Pengawasan PMB 2025</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 26 Agustus 2025</td>
+                        <td><a href="https://docs.google.com/spreadsheets/d/1We75flMzxdboijouoBtQusP0S4nMWo4P/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/spreadsheets/d/1b_Cp1QkYfgE-LJbb8717yO41zRtsLU58/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank">Laporan Pengawasan Kelas Organisasi 2025</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 10 Agustus 2025</td>
+                        <td><a href="https://docs.google.com/spreadsheets/d/1b_Cp1QkYfgE-LJbb8717yO41zRtsLU58/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/spreadsheets/d/10U-ioRmL-cMX3elSrWdNRe48pTmUErQg/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank">Laporan Pengawasan Webinar "Mindful Growth" 2025</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 16 Agustus 2025</td>
+                        <td><a href="https://docs.google.com/spreadsheets/d/10U-ioRmL-cMX3elSrWdNRe48pTmUErQg/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-info-circle"></i>
+            <div>
+                <h3>Informasi Dokumen</h3>
+                <p>Semua dokumen yang dipublikasikan di halaman ini merupakan dokumen resmi yang telah disahkan oleh DPA KMA-Kridaya. Untuk pertanyaan lebih lanjut, silakan hubungi sekretariat kami.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-logo-info">
+                 <div class="logo-text">
+                    <strong>DPA KMA-Kridaya</strong>
+                    <span>FPTI UPI</span>
+                </div>
+                <p>Dewan Perwakilan Anggota KMA-Kridaya Fakultas Pendidikan Teknik dan Informatika Universitas Pendidikan Indonesia</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Kontak Kami</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Dr. Setiabudi No. 207, Isola, Kec. Sukasari, Kota Bandung, Jawa Barat 40154</p>
+                <p><i class="fas fa-envelope"></i> kmakridayadpa@gmail.com</p>
+                <p><i class="fab fa-instagram"></i> @dpakmakridaya</p>
+            </div>
+            <div class="footer-links">
+                <h3>Tautan Terkait</h3>
+                <ul>
+                    <li><a href="https://upi.edu/">Website UPI</a></li>
+                    <li><a href="https://fptk.upi.edu/">Website FPTI UPI</a></li>
+                    <li><a href="https://arsitektur.upi.edu/">Arsitektur UPI</a></li>
+                    <li><a href="https://student.upi.edu/">Portal Mahasiswa UPI</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 DPA KMA-Kridaya FPTI UPI. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="help-button">
+        <i class="fas fa-question"></i>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

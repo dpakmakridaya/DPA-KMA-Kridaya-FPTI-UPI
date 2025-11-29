@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peraturan & Dokumen - DPA KMA-Kridaya FPTI UPI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+    <div class="container navbar-content">
+        <a href="index.html" class="logo">
+            <img src="img/dpa logo.png" alt="Logo DPA KMA-Kridaya"> 
+            <div class="logo-text">
+                <strong>DPA KMA-Kridaya</strong>
+                <span>FPTI UPI</span>
+            </div>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-menu">
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="laporan-pengawasan.html">Laporan Pengawasan</a></li>
+                <li><a href="peraturan-dokumen.html">Peraturan & Dokumen</a></li>
+                <li><a href="dokumen-lainnya.html">Dokumen Lainnya</a></li>
+                <li><a href="aspirasi.html">Aspirasi</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <div class="hero-section">
+        <div class="container">
+            <h2>Pusat Peraturan & Dokumen</h2>
+            <p>Akses seluruh peraturan, surat keputusan, notulensi rapat, dan dokumen resmi DPA KMA-Kridaya secara transparan dan mudah.</p>
+        </div>
+    </div>
+
+    <main class="container main-content">
+        <div class="search-filter-area">
+            <div class="search-input-wrapper">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Cari dokumen berdasarkan judul...">
+            </div>
+            <div class="filter-dropdowns">
+                <div class="dropdown" id="categoryDropdownContainer">
+                    <button class="dropdown-btn" id="categoryDropdownBtn">
+                        Semua Kategori <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="categoryDropdownMenu">
+                        <li data-value="Semua Kategori" class="active">Semua Kategori <i class="fas fa-check"></i></li>
+                        <li data-value="Peraturan Organisasi">Peraturan Organisasi <i class="fas fa-check"></i></li>
+                        <li data-value="Surat Keputusan">Surat Keputusan <i class="fas fa-check"></i></li>
+                        <li data-value="Program Legislasi">Program Legislasi <i class="fas fa-check"></i></li>
+                        <li data-value="SOP">SOP <i class="fas fa-check"></i></li>
+                        <li data-value="Tata Tertib">Tata Tertib <i class="fas fa-check"></i></li>
+                        <li data-value="GBPK">GBPK <i class="fas fa-check"></i></li>
+                        <li data-value="MKO">MKO <i class="fas fa-check"></i></li>
+                        <li data-value="AD/ART">AD/ART <i class="fas fa-check"></i></li>
+                        <li data-value="Rekomendasi Musyawarah">Rekomendasi Musyawarah</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <p class="document-count">Menampilkan <span id="displayedDocsCount">10</span> dari <span id="totalDocsCount">10</span> dokumen</p>
+
+        <div class="table-responsive">
+            <table class="document-table">
+                <thead>
+                    <tr>
+                        <th>Judul Dokumen</th>
+                        <th>Tanggal</th>
+                        <th>Kategori</th>
+                        <th>Aksi</th>
+                    </tr>
+                </thead>
+                <tbody id="documentList">
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/document/d/1L50-fEbW4aNMkuPfDbiY1o9ZzXmh0b4J/edit" target="_blank">GBPK Musyawarah XIX 2025</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 22 Mei 2025</td>
+                        <td><span class="category-tag tag-gbpk">GBPK</span></td>
+                        <td><a href="https://docs.google.com/document/d/1L50-fEbW4aNMkuPfDbiY1o9ZzXmh0b4J/edit" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/document/d/1VEvM8USjIC2GfBfcQrFHMhSgiPjPbT71/edit" target="_blank">Rekomendasi Musyawarah XIX</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 22 Mei 2025</td>
+                        <td><span class="category-tag tag-musyawarah">Rekomendasi Musyawarah</span></td>
+                        <td><a href="https://docs.google.com/document/d/1VEvM8USjIC2GfBfcQrFHMhSgiPjPbT71/edit" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1FkkUt-vDjZVz3on5FaXCUH1fNSwlYKKe/view" target="_blank">AD/ART KMA-Kridaya FPTI UPI</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 26 April 2025</td>
+                        <td><span class="category-tag tag-adart">AD/ART</span></td>
+                        <td><a href="https://drive.google.com/file/d/1FkkUt-vDjZVz3on5FaXCUH1fNSwlYKKe/view" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/document/d/1fOA7MZqVDWxPSBp3zc-aRMDBw2HMsMYx/edit" target="_blank">SOP DPA 2025 - 2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 25 Juli 2025</td>
+                        <td><span class="category-tag tag-sop">SOP</span></td>
+                        <td><a href="https://docs.google.com/document/d/1fOA7MZqVDWxPSBp3zc-aRMDBw2HMsMYx/edit" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/document/d/1tqr5vmbqpsPVFLJul-xwh6VbHIiQ7vSi/edit" target="_blank">MKO Musyawarah XIX 2023</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 22 Mei 2025</td>
+                        <td><span class="category-tag tag-mko">MKO</span></td>
+                        <td><a href="https://docs.google.com/document/d/1tqr5vmbqpsPVFLJul-xwh6VbHIiQ7vSi/edit" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/133mGlggobSW7ZtdA_WwX75ytgA2UD9uE/view?usp=sharing" target="_blank">SK 01 : Pemberhentian Tugas DPA KMA-Kridaya FPTI UPI Periode 2024-2025</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 17 Juni 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/133mGlggobSW7ZtdA_WwX75ytgA2UD9uE/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1_zURuA2qTcO7GiUuffSbmnFwpHPvpgm7/view?usp=sharing" target="_blank">SK 02 : Kepengurusan DPA KMA-Kridaya FPTI UPI Periode 2025-2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 17 Juni 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/1_zURuA2qTcO7GiUuffSbmnFwpHPvpgm7/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://docs.google.com/document/d/14beajNrQIb6BZQjCtiXT-P6fKp1OoI7e/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank">SK 03 : Peraturan Tata Tertib DPA</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 28 Juni 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://docs.google.com/document/d/14beajNrQIb6BZQjCtiXT-P6fKp1OoI7e/edit?usp=sharing&ouid=115585155211381410170&rtpof=true&sd=true" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1OdLWSqGJRE4FpWl02duFDcyysGzCY-WB/view?usp=sharing" target="_blank">SK 04 : Pengesahan Program Legislasi KMA-Kridaya FPTI UPI Periode 2025-2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 30 Juni 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/1OdLWSqGJRE4FpWl02duFDcyysGzCY-WB/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/18h9RygXw_kz-tm7e4_pcgdORtsmJ-j2L/view?usp=sharing" target="_blank">SK 05 : Pengesahan SOP DPA KMA-Kridaya FPTI UPI Periode 2025-2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 25 Juli 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/18h9RygXw_kz-tm7e4_pcgdORtsmJ-j2L/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1zu35WIWBocn3LAubaUnp8IuOUQ7KPerq/view?usp=sharing" target="_blank">SK 06 : Pengesahan RAPBO Menjadi APBO KMA-Kridaya FPTI UPI Periode 2025-2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 29 Juli 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/1zu35WIWBocn3LAubaUnp8IuOUQ7KPerq/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1zu35WIWBocn3LAubaUnp8IuOUQ7KPerq/view?usp=sharing" target="_blank">SK 07 : Pengesahan RAPBO Menjadi APBO KMA-Kridaya FPTI UPI Periode 2025-2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 29 Juli 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/1zu35WIWBocn3LAubaUnp8IuOUQ7KPerq/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1RfL2yD5DqbeCruGQ2NwfpiQcuW2qB314/view?usp=sharing" target="_blank">SK 08 : Pengesahan Tim Ad Hoc KMA-Kridaya FPTI UPI Periode 2025-2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 27 September 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/1RfL2yD5DqbeCruGQ2NwfpiQcuW2qB314/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1I6TMJF5vPZXC2kHq_LZCM_eKckjQjAu7/view?usp=sharing" target="_blank">SK 09 : Pengesahan Panitia Pengawas Mabim 2025 KMA-Kridaya FPTI UPI</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 27 September 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/1I6TMJF5vPZXC2kHq_LZCM_eKckjQjAu7/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1ENqvretILQV3aG1QYSwGuW_kdjqfIBl4/view?usp=sharing" target="_blank">SK 10 : Pengesahan Panitia Pengawas LDKM 2025 KMA-Kridaya FPTI UPI</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 19 Oktober 2025</td>
+                        <td><span class="category-tag tag-keputusan">Surat Keputusan</span></td>
+                        <td><a href="https://drive.google.com/file/d/1ENqvretILQV3aG1QYSwGuW_kdjqfIBl4/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1kYPPlMBDWY__NXMj5pzG_sdKHv3-MMEo/view?usp=sharing" target="_blank">PO tentang Pembentukan Peraturan Organisasi</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 11 Mei 2025</td>
+                        <td><span class="category-tag tag-organisasi">Peraturan Organisasi</span></td>
+                        <td><a href="https://drive.google.com/file/d/1kYPPlMBDWY__NXMj5pzG_sdKHv3-MMEo/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1vHCmW-oYpBo9UaDSdWkkk8WvN_sQuzzO/view?usp=sharing" target="_blank">PO tentang Tanda Pengenal</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 11 Mei 2025</td>
+                        <td><span class="category-tag tag-organisasi">Peraturan Organisasi</span></td>
+                        <td><a href="https://drive.google.com/file/d/1vHCmW-oYpBo9UaDSdWkkk8WvN_sQuzzO/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1LpGS1Q7YsF5gIBEwYqZlqv8x-KGKXewL/view?usp=sharing" target="_blank">PO tentang Kaderisasi</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 11 Mei 2025</td>
+                        <td><span class="category-tag tag-organisasi">Peraturan Organisasi</span></td>
+                        <td><a href="https://drive.google.com/file/d/1LpGS1Q7YsF5gIBEwYqZlqv8x-KGKXewL/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1AGxjbLjnhRNRCW7Wn0Y-N58ZcpgSfE7t/view?usp=sharing" target="_blank">PO tentang Musyawarah</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 11 Mei 2025</td>
+                        <td><span class="category-tag tag-organisasi">Peraturan Organisasi</span></td>
+                        <td><a href="https://drive.google.com/file/d/1AGxjbLjnhRNRCW7Wn0Y-N58ZcpgSfE7t/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1GBgJW20hJf-69JKs-yWwTTxUYK0WK80V/view?usp=sharing" target="_blank">PO tentang Kepanitiaan</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 11 Mei 2025</td>
+                        <td><span class="category-tag tag-organisasi">Peraturan Organisasi</span></td>
+                        <td><a href="https://drive.google.com/file/d/1GBgJW20hJf-69JKs-yWwTTxUYK0WK80V/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1qDQ4RkFRoVnGQebDgk4hSgCB02aYBd1q/view?usp=sharing" target="_blank">Tata Tertib DPA KMA-Kridaya FPTI UPI Tahun 2025</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 11 Mei 2025</td>
+                        <td><span class="category-tag tag-tatib">Tata Tertib</span></td>
+                        <td><a href="https://drive.google.com/file/d/1qDQ4RkFRoVnGQebDgk4hSgCB02aYBd1q/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                    <tr class="document-item">
+                        <td class="document-title-col">
+                            <i class="fas fa-file-alt"></i>
+                            <a href="https://drive.google.com/file/d/1hzZb9bv1V24pYbmpOzEdLz4tuAombfcA/view?usp=sharing" target="_blank">Program Legislasi KMA-Kridaya FPTI UPI Tahun 2025-2026</a>
+                        </td>
+                        <td><i class="fas fa-calendar-alt"></i> 30 Juni 2025</td>
+                        <td><span class="category-tag tag-proleg">Program Legislasi</span></td>
+                        <td><a href="https://drive.google.com/file/d/1hzZb9bv1V24pYbmpOzEdLz4tuAombfcA/view?usp=sharing" target="_blank" download><i class="fas fa-download"></i></a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="info-card">
+            <i class="fas fa-info-circle"></i>
+            <div>
+                <h3>Informasi Dokumen</h3>
+                <p>Semua dokumen yang dipublikasikan di halaman ini merupakan dokumen resmi yang telah disahkan oleh DPA KMA-Kridaya. Untuk pertanyaan lebih lanjut, silakan hubungi sekretariat kami.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer-section">
+        <div class="container footer-content">
+            <div class="footer-logo-info">
+                 <div class="logo-text">
+                    <strong>DPA KMA-Kridaya</strong>
+                    <span>FPTI UPI</span>
+                </div>
+                <p>Dewan Perwakilan Anggota KMA-Kridaya Fakultas Pendidikan Teknik dan Informatika Universitas Pendidikan Indonesia</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Kontak Kami</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Dr. Setiabudi No. 207, Isola, Kec. Sukasari, Kota Bandung, Jawa Barat 40154</p>
+                <p><i class="fas fa-envelope"></i> kmakridayadpa@gmail.com</p>
+                <p><i class="fab fa-instagram"></i> @dpakmakridaya</p>
+            </div>
+            <div class="footer-links">
+                <h3>Tautan Terkait</h3>
+                <ul>
+                    <li><a href="https://upi.edu/">Website UPI</a></li>
+                    <li><a href="https://fptk.upi.edu/">Website FPTI UPI</a></li>
+                    <li><a href="https://arsitektur.upi.edu/">Arsitektur UPI</a></li>
+                    <li><a href="https://student.upi.edu/">Portal Mahasiswa UPI</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 DPA KMA-Kridaya FPTI UPI. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <div class="help-button">
+        <i class="fas fa-question"></i>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

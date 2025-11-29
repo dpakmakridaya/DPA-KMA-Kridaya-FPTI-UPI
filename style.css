@@ -1,0 +1,906 @@
+/* ==============================================
+   1. IMPORTS & VARIABLES
+   ============================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap');
+
+:root {
+    /* Color Palette */
+    --primary-blue: #0062cc;
+    --dark-blue: #004080;
+    --medium-dark-blue: #2c2c8c;
+    --light-gray: #f8f9fa;
+    --medium-gray: #e9ecef;
+    --text-color: #343a40;
+    --light-text: #6c757d;
+    --white: #ffffff;
+
+    /* Tag Colors */
+    --tag-organisasi: #e0f2f7; --tag-organisasi-text: #007bff;
+    --tag-keputusan: #e6e9ff;  --tag-keputusan-text: #6610f2;
+    --tag-rapat: #f3e6ff;      --tag-rapat-text: #8b3cf6;
+    --tag-pengawasan: #fff3cd; --tag-pengawasan-text: #ffc107;
+    --tag-sop: #eef2ff;        --tag-sop-text: #6366f1;
+    --tag-tatib: #f0fdf4;      --tag-tatib-text: #22c55e;
+    --tag-gbpk: #fff7ed;       --tag-gbpk-text: #f97316;
+    --tag-mko: #fff1f2;        --tag-mko-text: #f43f5e;
+    --tag-adart: #f1f5f9;      --tag-adart-text: #64748b;
+    --tag-proleg: #ccfbf1;     --tag-proleg-text: #0f766e;
+    --tag-musyawarah: #d4edda; --tag-musyawarah-text: #155724;
+}
+
+/* ==============================================
+   2. GLOBAL RESET & TYPOGRAPHY
+   ============================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-gray);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden; 
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--dark-blue);
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.main-content {
+    padding-bottom: 50px;
+}
+
+/* Headings Helpers */
+.section-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--dark-blue);
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.section-subtitle {
+    font-size: 1.1em;
+    color: var(--light-text);
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* ==============================================
+   3. COMPONENTS (Navbar, Buttons, Etc)
+   ============================================== */
+
+/* --- Navbar --- */
+.navbar {
+    background-color: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- Logo Styling --- */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 45px;
+    margin-right: 12px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo-text strong {
+    font-weight: 700;
+    font-size: 1.1em;
+    color: var(--dark-blue);
+    line-height: 1.1;
+}
+
+.logo-text span {
+    font-weight: 400;
+    font-size: 0.8em;
+    color: var(--light-text);
+    letter-spacing: 0.5px;
+}
+
+/* --- Navigation Links (Desktop) --- */
+.nav-menu ul {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li a {
+    color: var(--text-color);
+    font-weight: 500;
+    font-size: 0.95em;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-menu ul li a:hover::after,
+.nav-menu ul li a.active::after {
+    width: 100%;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a.active {
+    color: var(--primary-blue);
+}
+
+/* --- Hamburger Menu (Default Hidden) --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: var(--dark-blue);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- Buttons --- */
+.btn-primary {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-blue);
+    color: var(--white) !important;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.btn-secondary:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+}
+
+.btn-light {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.btn-light:hover {
+    background-color: var(--medium-gray);
+}
+
+.help-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--text-color);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 50;
+}
+
+.help-button:hover {
+    background-color: #000;
+    transform: scale(1.05);
+}
+
+/* ==============================================
+   4. DATA TABLES & FILTERS
+   ============================================== */
+.search-filter-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    min-width: 300px;
+}
+
+.search-input-wrapper i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--light-text);
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 12px 12px 45px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#searchInput:focus {
+    border-color: var(--primary-blue);
+    box-shadow: 0 0 0 3px rgba(0, 98, 204, 0.2);
+}
+
+/* Dropdown Styles */
+.dropdown { position: relative; }
+.dropdown-btn {
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.dropdown-btn:hover {
+    background-color: #f0f0f0;
+    border-color: var(--primary-blue);
+}
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 250px;
+    z-index: 100; /* Z-Index Tinggi */
+    margin-top: 5px;
+    padding: 5px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+.dropdown-menu.show { display: block; }
+.dropdown-menu li {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 0.95em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s ease;
+}
+.dropdown-menu li:hover { background-color: var(--light-gray); }
+.dropdown-menu li .fa-check { display: none; color: var(--primary-blue); }
+.dropdown-menu li.active { background-color: #e6f0fa; font-weight: 600; }
+.dropdown-menu li.active .fa-check { display: inline-block; }
+
+/* Table Styles */
+.document-count {
+    color: var(--light-text);
+    margin-bottom: 20px;
+    font-size: 0.95em;
+}
+.document-count span {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin-bottom: 30px;
+    border: 1px solid var(--medium-gray);
+    border-radius: 8px;
+    background-color: var(--white);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.document-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.document-table th, .document-table td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--medium-gray);
+    vertical-align: top;
+}
+
+.document-table th {
+    background-color: var(--light-gray);
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.85em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.document-table tbody tr:last-child td { border-bottom: none; }
+.document-table tbody tr:hover { background-color: #fdfdfd; }
+.document-table tbody tr.hidden { display: none; }
+
+/* Table Columns */
+.document-title-col {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+.document-title-col i {
+    color: var(--primary-blue);
+    font-size: 1.2em;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+.document-table td a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+.document-table td a:hover { color: var(--primary-blue); }
+
+/* Date Column */
+.document-table td:nth-child(2) {
+    white-space: nowrap;
+    color: var(--light-text);
+}
+.document-table td:nth-child(2) i { margin-right: 5px; }
+
+/* Action Column (Download) */
+.document-table th:last-child, .document-table td:last-child {
+    text-align: center;
+    width: 80px;
+}
+.document-table td:last-child a i {
+    color: var(--primary-blue);
+    font-size: 1.2em;
+    transition: transform 0.3s ease;
+}
+.document-table td:last-child a:hover i {
+    color: var(--dark-blue);
+    transform: scale(1.1);
+}
+
+/* Category Tags */
+.category-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 500;
+    white-space: nowrap;
+    font-family: 'Inter', sans-serif;
+}
+.tag-organisasi { background-color: var(--tag-organisasi); color: var(--tag-organisasi-text); }
+.tag-keputusan { background-color: var(--tag-keputusan); color: var(--tag-keputusan-text); }
+.tag-rapat { background-color: var(--tag-rapat); color: var(--tag-rapat-text); }
+.tag-pengawasan { background-color: var(--tag-pengawasan); color: var(--tag-pengawasan-text); }
+.tag-sop { background-color: var(--tag-sop); color: var(--tag-sop-text); }
+.tag-tatib { background-color: var(--tag-tatib); color: var(--tag-tatib-text); }
+.tag-gbpk { background-color: var(--tag-gbpk); color: var(--tag-gbpk-text); }
+.tag-mko { background-color: var(--tag-mko); color: var(--tag-mko-text); }
+.tag-adart { background-color: var(--tag-adart); color: var(--tag-adart-text); }
+.tag-proleg { background-color: var(--tag-proleg); color: var(--tag-proleg-text); }
+.tag-musyawarah { background-color: var(--tag-musyawarah); color: var(--tag-musyawarah-text); }
+
+/* Info Card */
+.info-card {
+    background-color: var(--white);
+    border-left: 5px solid var(--primary-blue);
+    padding: 20px 25px;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 30px;
+    border: 1px solid var(--medium-gray);
+}
+.info-card i { color: var(--primary-blue); font-size: 1.8em; margin-top: 3px; }
+.info-card h3 { margin: 0 0 5px 0; color: var(--dark-blue); font-weight: 600; }
+.info-card p { font-size: 0.95em; color: var(--text-color); }
+
+/* ==============================================
+   5. PAGE SPECIFIC STYLES
+   ============================================== */
+
+/* --- A. Beranda (Home) --- */
+.hero-section-beranda {
+    position: relative;
+    background-image: url('img/hero-section-tentang-kami.png');
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    padding: 120px 0;
+    text-align: left;
+    overflow: hidden;
+}
+.hero-overlay-beranda {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(138, 138, 138, 0.5);
+    padding: 20px 0;
+}
+.hero-bg-text {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+    font-size: 280px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+    z-index: 1;
+    line-height: 1;
+}
+.hero-section-beranda .container { position: relative; z-index: 3; }
+.hero-section-beranda h1 { font-size: 2.2em; font-weight: 300; opacity: 0.9; }
+.hero-section-beranda h2 { font-family: 'Merriweather', serif; font-size: 3.5em; font-weight: 700; margin-bottom: 15px; }
+.hero-section-beranda p { font-size: 1.15em; max-width: 600px; margin-bottom: 30px; opacity: 0.9; line-height: 1.7; }
+.hero-buttons { display: flex; gap: 15px; align-items: center; }
+
+/* Fungsi Section */
+.fungsi-section { padding: 30px 0; }
+.fungsi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.fungsi-card {
+    background: var(--white);
+    border: 1px solid var(--medium-gray);
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.fungsi-card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+.fungsi-card i { font-size: 2.5em; color: var(--primary-blue); margin-bottom: 20px; }
+.fungsi-card h3 { font-size: 1.3em; font-weight: 600; color: var(--text-color); margin-bottom: 10px; }
+.fungsi-card p { font-size: 0.95em; color: var(--light-text); line-height: 1.6; }
+
+/* Akses Cepat */
+.akses-cepat-section { padding: 30px 0 60px 0; background-color: var(--light-gray); }
+.akses-cepat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+.akses-cepat-card {
+    display: block;
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+.akses-cepat-card:hover { transform: translateY(-5px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); border-bottom-color: var(--primary-blue); }
+.akses-cepat-card i { font-size: 2em; color: var(--primary-blue); margin-bottom: 15px; }
+.akses-cepat-card h4 { font-size: 1.2em; font-weight: 600; color: var(--text-color); margin-bottom: 5px; }
+.akses-cepat-card p { font-size: 0.9em; color: var(--light-text); }
+
+/* CTA Section */
+.cta-section {
+    background-color: var(--dark-blue);
+    padding: 60px 0;
+    text-align: center;
+    color: var(--white);
+}
+.cta-section h2 { font-family: 'Merriweather', serif; font-size: 2em; font-weight: 600; margin-bottom: 10px; }
+.cta-section p { font-size: 1.1em; opacity: 0.8; margin-bottom: 30px; line-height: 1.7; }
+
+/* --- B. Header Dokumen & Aspirasi --- */
+.hero-section, .hero-aspirasi {
+    background: linear-gradient(135deg, #004080, #0062cc);
+    color: var(--white);
+    padding: 70px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.hero-section h2, .hero-aspirasi h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+.hero-section p, .hero-aspirasi p {
+    font-size: 1.15em;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* --- C. Aspirasi Form --- */
+.form-section {
+    padding: 4rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white);
+}
+.form-container {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* --- D. Halaman Kontak --- */
+.contact-page-wrapper {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    min-height: 60vh;
+}
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+.contact-card {
+    background-color: var(--white);
+    border: 2px solid #e0e7ff;
+    border-radius: 12px;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.contact-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: color 0.3s ease;
+}
+.contact-link:hover {
+    color: var(--primary-blue);
+}
+.contact-link:hover .instansi-name {
+    color: var(--primary-blue);
+}
+.contact-card:hover { transform: translateY(-5px); border-color: var(--primary-blue); }
+.contact-icon { font-size: 3.5rem; color: #5a8dee; flex-shrink: 0; }
+.contact-text { font-family: 'Inter', sans-serif; color: var(--text-color); line-height: 1.6; }
+.instansi-name { font-weight: 700; color: #1a1a2e; margin-bottom: 5px; display: block; }
+.contact-detail { font-size: 0.95em; color: #555; }
+.email-text { font-size: 1.1em; font-weight: 500; }
+
+/* ==============================================
+   6. FOOTER
+   ============================================== */
+.footer-section {
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding-top: 60px;
+    margin-top: 50px;
+}
+.cta-section + .footer-section { margin-top: 0; }
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+.footer-logo-info { flex-basis: 300px; }
+.footer-logo-info .logo-text, .footer-logo-info .logo-text strong { color: var(--white); }
+.footer-logo-info .logo-text span { color: var(--white); opacity: 0.8; }
+.footer-logo-info p { font-size: 0.9em; opacity: 0.8; line-height: 1.7; }
+.footer-contact, .footer-links { flex-basis: 250px; }
+.footer-contact h3, .footer-links h3 { font-size: 1.2em; margin-bottom: 20px; font-weight: 600; opacity: 0.95; }
+.footer-contact p { margin-bottom: 15px; font-size: 0.9em; opacity: 0.8; display: flex; align-items: flex-start; gap: 10px; }
+.footer-links ul li { margin-bottom: 12px; }
+.footer-links ul li a { color: var(--white); opacity: 0.8; font-size: 0.9em; transition: opacity 0.3s ease; }
+.footer-links ul li a:hover { opacity: 1; text-decoration: underline; }
+.footer-bottom {
+    background-color: var(--dark-blue);
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.85em;
+    opacity: 0.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==============================================
+   7. MEDIA QUERIES (RESPONSIVE FIXES)
+   ============================================== */
+
+@media (max-width: 992px) {
+    /* --- Navbar Mobile Fix --- */
+    .navbar {
+        padding: 15px 0;
+        position: fixed; /* Membuat navbar nempel di atas */
+        width: 100%;
+        top: 0;
+        /* Tambahkan height otomatis agar tidak terpotong */
+        height: auto; 
+    }
+
+    /* Pastikan padding content agar tidak tertutup navbar */
+    body {
+        padding-top: 75px; 
+    }
+
+    .navbar-content {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+        z-index: 20002; /* SANGAT PENTING: Paling atas di atas segalanya */
+        position: relative; /* Agar z-index berfungsi */
+    }
+
+    /* Animasi Ikon Hamburger */
+    .menu-toggle.is-active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0; /* Paksa full layar */
+        width: 100%;
+        height: 100vh; /* Full layar */
+        background-color: var(--white);
+        z-index: 20001; /* Di bawah tombol hamburger tapi di atas konten */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0;
+        
+        /* Animasi Slide */
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* Paksa Override dengan !important */
+    .nav-menu.active {
+        transform: translateX(0) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 25px;
+    }
+
+    .nav-menu ul li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        padding: 15px;
+        font-size: 1.2em;
+    }
+
+    /* --- Search & Filter Mobile --- */
+    .search-filter-area {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-dropdowns {
+        width: 100%;
+        margin-top: 10px;
+    }
+    
+    .dropdown-btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .search-input-wrapper {
+        width: 100%;
+    }
+
+    /* --- Footer Adjustment --- */
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .footer-logo-info, .footer-contact, .footer-links {
+        flex-basis: auto;
+        width: 100%;
+    }
+    
+    .footer-contact p {
+        justify-content: center;
+    }
+    
+    /* Grid Tablet */
+    .fungsi-grid, .akses-cepat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- Hero Section Fix --- */
+    .hero-section-beranda {
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .hero-bg-text {
+        font-size: 100px;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .hero-section-beranda h1 { font-size: 1.8em; }
+    .hero-section-beranda h2 { font-size: 2.5em; }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        display: block;
+        text-align: center;
+    }
+
+    /* --- FIX KHUSUS: TOMBOL ASPIRASI RAPI --- */
+    .cta-section {
+        padding: 50px 20px;
+    }
+
+    .cta-section h2 {
+        font-size: 1.8em;
+    }
+
+    /* Memaksa teks tombol turun ke bawah jika layar sempit */
+    .btn-light {
+        white-space: normal !important;
+        height: auto !important;
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        padding: 15px 20px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* --- Grid Mobile --- */
+    .fungsi-grid, .akses-cepat-grid, .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-card {
+        padding: 25px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 576px) {
+    /* --- Tabel Responsif --- */
+    .document-table th:nth-child(2),
+    .document-table td:nth-child(2) {
+        display: none; /* Sembunyikan tanggal */
+    }
+    
+    .document-title-col {
+        font-size: 0.9em;
+    }
+    
+    .document-table th:last-child,
+    .document-table td:last-child {
+        width: 50px;
+        text-align: center;
+    }
+    
+    .hero-section h2, .hero-aspirasi h1 {
+        font-size: 2em;
+    }
+}
