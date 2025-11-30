@@ -73,7 +73,6 @@ Gunakan cara ini untuk file **`laporan-pengawasan.html`** dan **`dokumen-lainnya
         <a href="LINK_GDRIVE_DISINI" target="_blank">JUDUL_DOKUMEN_DISINI</a>
     </td>
     <td><i class="fas fa-calendar-alt"></i> TANGGAL_BULAN_TAHUN</td>
-    
     <td><a href="LINK_GDRIVE_DISINI" target="_blank" download><i class="fas fa-download"></i></a></td>
 </tr>
 ```
