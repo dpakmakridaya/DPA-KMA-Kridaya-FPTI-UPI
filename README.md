@@ -37,9 +37,7 @@ Gunakan cara ini khusus untuk file **`peraturan-dokumen.html`** yang memiliki ko
         <a href="LINK_GDRIVE_DISINI" target="_blank">JUDUL_DOKUMEN_DISINI</a>
     </td>
     <td><i class="fas fa-calendar-alt"></i> TANGGAL_BULAN_TAHUN</td>
-    
     <td><span class="category-tag KELAS_TAG_DISINI">NAMA_KATEGORI</span></td>
-    
     <td><a href="LINK_GDRIVE_DISINI" target="_blank" download><i class="fas fa-download"></i></a></td>
 </tr>
 ```
