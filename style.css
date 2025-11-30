@@ -280,7 +280,7 @@ ul {
 }
 
 /* ==============================================
-   4. DATA TABLES & FILTERS
+   4. DATA TABLES & FILTERS (REVISI PERBAIKAN)
    ============================================== */
 .search-filter-area {
     display: flex;
@@ -373,7 +373,7 @@ ul {
 .dropdown-menu li.active { background-color: #e6f0fa; font-weight: 600; }
 .dropdown-menu li.active .fa-check { display: inline-block; }
 
-/* Table Styles */
+/* --- Table Styles (FIXED for Neat & Connected Lines) --- */
 .document-count {
     color: var(--light-text);
     margin-bottom: 20px;
@@ -391,18 +391,28 @@ ul {
     border-radius: 8px;
     background-color: var(--white);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    /* PENTING: Padding 0 dan overflow hidden agar garis tabel mentok ke bingkai */
+    padding: 0;
+    overflow: hidden;
 }
 
 .document-table {
     width: 100%;
-    border-collapse: collapse;
+    /* PENTING: Membuat garis menyatu (tidak terputus) */
+    border-collapse: collapse; 
+    border-spacing: 0;
+    margin: 0;
 }
 
 .document-table th, .document-table td {
     padding: 16px 20px;
     text-align: left;
+    /* Hanya garis bawah */
     border-bottom: 1px solid var(--medium-gray);
-    vertical-align: top;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    vertical-align: middle;
 }
 
 .document-table th {
@@ -412,11 +422,21 @@ ul {
     font-size: 0.85em;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    /* Garis bawah header dibuat sedikit lebih tebal/gelap */
+    border-bottom: 2px solid #d1d5db;
 }
 
-.document-table tbody tr:last-child td { border-bottom: none; }
-.document-table tbody tr:hover { background-color: #fdfdfd; }
-.document-table tbody tr.hidden { display: none; }
+/* Menghilangkan border bawah pada baris terakhir agar tidak dobel dengan bingkai */
+.document-table tbody tr:last-child td { 
+    border-bottom: none; 
+}
+
+.document-table tbody tr:hover { 
+    background-color: #fdfdfd; 
+}
+.document-table tbody tr.hidden { 
+    display: none; 
+}
 
 /* Table Columns */
 .document-title-col {
@@ -504,18 +524,29 @@ ul {
 /* --- A. Beranda (Home) --- */
 .hero-section-beranda {
     position: relative;
-    background-image: url('img/hero-section-tentang-kami.png');
-    background-size: cover;
-    background-position: center;
-    color: var(--white);
     padding: 120px 0;
     text-align: left;
+    color: var(--white);
     overflow: hidden;
+}
+.hero-section-beranda::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('img/hero-section-tentang-kami.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    filter: blur(2px) brightness(0.4);
+    transform: scale(1.05); 
 }
 .hero-overlay-beranda {
     position: relative;
     z-index: 2;
-    background-color: rgba(138, 138, 138, 0.5);
+    background-color: transparent;
     padding: 20px 0;
 }
 .hero-bg-text {
@@ -528,6 +559,10 @@ ul {
     color: rgba(255, 255, 255, 0.05);
     z-index: 1;
     line-height: 1;
+}
+.hero-section-beranda .container { 
+    position: relative; 
+    z-index: 3;
 }
 .hero-section-beranda .container { position: relative; z-index: 3; }
 .hero-section-beranda h1 { font-size: 2.2em; font-weight: 300; opacity: 0.9; }
