@@ -280,7 +280,7 @@ ul {
 }
 
 /* ==============================================
-   4. DATA TABLES & FILTERS (REVISI PERBAIKAN)
+   4. DATA TABLES & FILTERS
    ============================================== */
 .search-filter-area {
     display: flex;
@@ -373,7 +373,7 @@ ul {
 .dropdown-menu li.active { background-color: #e6f0fa; font-weight: 600; }
 .dropdown-menu li.active .fa-check { display: inline-block; }
 
-/* --- Table Styles (FIXED for Neat & Connected Lines) --- */
+/* --- Table Styles (PERBAIKAN SCROLL MOBILE) --- */
 .document-count {
     color: var(--light-text);
     margin-bottom: 20px;
@@ -385,18 +385,20 @@ ul {
 }
 
 .table-responsive {
-    overflow-x: auto;
+    overflow-x: auto; /* PENTING: Mengaktifkan scroll horizontal */
     margin-bottom: 30px;
     border: 1px solid var(--medium-gray);
     border-radius: 8px;
     background-color: var(--white);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     padding: 0;
-    overflow: hidden;
+    /* overflow: hidden;  <-- HAPUS INI */
+    overflow-y: hidden; /* Ganti jadi ini agar border-radius tetap rapi tapi scroll horizontal jalan */
 }
 
 .document-table {
     width: 100%;
+    /* PENTING: Membuat garis menyatu (tidak terputus) */
     border-collapse: collapse; 
     border-spacing: 0;
     margin: 0;
@@ -405,6 +407,7 @@ ul {
 .document-table th, .document-table td {
     padding: 16px 20px;
     text-align: left;
+    /* Hanya garis bawah */
     border-bottom: 1px solid var(--medium-gray);
     border-top: none;
     border-left: none;
@@ -419,9 +422,11 @@ ul {
     font-size: 0.85em;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    /* Garis bawah header dibuat sedikit lebih tebal/gelap */
     border-bottom: 2px solid #d1d5db;
 }
 
+/* Menghilangkan border bawah pada baris terakhir agar tidak dobel dengan bingkai */
 .document-table tbody tr:last-child td { 
     border-bottom: none; 
 }
@@ -730,12 +735,14 @@ ul {
     /* --- Navbar Mobile Fix --- */
     .navbar {
         padding: 15px 0;
-        position: fixed; 
+        position: fixed; /* Membuat navbar nempel di atas */
         width: 100%;
         top: 0;
+        /* Tambahkan height otomatis agar tidak terpotong */
         height: auto; 
     }
 
+    /* Pastikan padding content agar tidak tertutup navbar */
     body {
         padding-top: 75px; 
     }
@@ -747,8 +754,8 @@ ul {
 
     .menu-toggle {
         display: flex;
-        z-index: 20002;
-        position: relative;
+        z-index: 20002; /* SANGAT PENTING: Paling atas di atas segalanya */
+        position: relative; /* Agar z-index berfungsi */
     }
 
     /* Animasi Ikon Hamburger */
@@ -761,11 +768,11 @@ ul {
         top: 0;
         right: 0;
         left: 0;
-        bottom: 0;
+        bottom: 0; /* Paksa full layar */
         width: 100%;
-        height: 100vh;
+        height: 100vh; /* Full layar */
         background-color: var(--white);
-        z-index: 20001;
+        z-index: 20001; /* Di bawah tombol hamburger tapi di atas konten */
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -779,6 +786,7 @@ ul {
         box-shadow: -5px 0 15px rgba(0,0,0,0.1);
     }
 
+    /* Paksa Override dengan !important */
     .nav-menu.active {
         transform: translateX(0) !important;
         opacity: 1 !important;
@@ -876,6 +884,7 @@ ul {
         text-align: center;
     }
 
+    /* --- FIX KHUSUS: TOMBOL ASPIRASI RAPI --- */
     .cta-section {
         padding: 50px 20px;
     }
@@ -884,6 +893,7 @@ ul {
         font-size: 1.8em;
     }
 
+    /* Memaksa teks tombol turun ke bawah jika layar sempit */
     .btn-light {
         white-space: normal !important;
         height: auto !important;
@@ -912,7 +922,7 @@ ul {
     /* --- Tabel Responsif --- */
     .document-table th:nth-child(2),
     .document-table td:nth-child(2) {
-        display: none;
+        display: none; /* Sembunyikan tanggal */
     }
     
     .document-title-col {
@@ -929,4 +939,3 @@ ul {
         font-size: 2em;
     }
 }
-
