@@ -536,11 +536,11 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/hero-section-tentang-kami.png');
+    background-image: url('img/hero-section-tentang-kami.jpg');
     background-size: cover;
     background-position: center;
     z-index: 0;
-    filter: blur(2px) brightness(0.4);
+    filter: blur(1px) brightness(0.4);
     transform: scale(1.05); 
 }
 .hero-overlay-beranda {
@@ -939,4 +939,5 @@ ul {
         font-size: 2em;
     }
 }
+
 
