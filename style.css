@@ -536,7 +536,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('img/hero-section-tentang-kami.jpeg');
+    background-image: url('img/hero-section-tentang-kami.png');
     background-size: cover;
     background-position: center;
     z-index: 0;
@@ -939,3 +939,4 @@ ul {
         font-size: 2em;
     }
 }
+
