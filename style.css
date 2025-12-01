@@ -540,7 +540,7 @@ ul {
     background-size: cover;
     background-position: center;
     z-index: 0;
-    filter: blur(0px) brightness(0.4);
+    filter: blur(0px) brightness(1);
     transform: scale(1.05); 
 }
 .hero-overlay-beranda {
@@ -939,6 +939,7 @@ ul {
         font-size: 2em;
     }
 }
+
 
 
 
